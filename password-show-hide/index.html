@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Show Hide</title>
+</head>
+<body>
+    <form action="" method="post">
+        <input type="password" name="" id="">
+        <span id="password_show_hide_btn">
+            <i class="fa fa-eye" aria-hidden="true" id="eye_icon"></i>
+        </span>
+    </form>
+
+    <!-- JQuery code -->
+    <script>
+        $("#password_show_hide_btn").on("click", () => {
+            let eyeIconRef = $("#eye_icon")
+            let passwordRef = $("#password")
+            if(passwordRef.attr("type") === "text") {
+                eyeIconRef.removeClass("fa-eye-slash")
+                eyeIconRef.addClass("fa-eye")
+                passwordRef.attr("type", "password")
+            } else {
+                eyeIconRef.removeClass("fa-eye")
+                eyeIconRef.addClass("fa-eye-slash")
+                passwordRef.attr("type", "text")
+            }
+        })
+    </script>
+    <!-- End JQuery code -->
+
+
+    <!-- JavaScript code -->
+    <script>
+        document.getElementById("password_show_hide_btn").addEventListener("click", (e) => {
+            let eyeIconRef = document.getElementById("eye_icon")
+            let passwordRef =document.getElementById("password")
+            
+            if(passwordRef.getAttribute("type") === "text") {
+                eyeIconRef.classList.remove("fa-eye-slash")
+                eyeIconRef.classList.add("fa-eye")
+                passwordRef.setAttribute("type", "password")
+            } else {
+                eyeIconRef.classList.remove("fa-eye")
+                eyeIconRef.classList.add("fa-eye-slash")
+                passwordRef.setAttribute("type", "text")
+            }
+        })
+    </script>
+    <!-- End JavaScript code -->
+
+</body>
+</html>
